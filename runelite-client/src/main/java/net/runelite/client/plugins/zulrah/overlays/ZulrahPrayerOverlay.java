@@ -56,7 +56,7 @@ public class ZulrahPrayerOverlay extends Overlay
 	}
 
 	@Override
-	public Dimension render(Graphics2D graphics, Point parent)
+	public Dimension render(Graphics2D graphics)
 	{
 		ZulrahInstance instance = plugin.getInstance();
 
@@ -80,7 +80,7 @@ public class ZulrahPrayerOverlay extends Overlay
 		BufferedImage prayerImage = ZulrahImageManager.getProtectionPrayerBufferedImage(prayer);
 		ImagePanelComponent imagePanelComponent = new ImagePanelComponent();
 		imagePanelComponent.setTitle("Switch!");
-		imagePanelComponent.setImage(prayerImage);
-		return imagePanelComponent.render(graphics, parent);
+		imagePanelComponent.getImages().add(prayerImage);
+		return imagePanelComponent.render(graphics);
 	}
 }

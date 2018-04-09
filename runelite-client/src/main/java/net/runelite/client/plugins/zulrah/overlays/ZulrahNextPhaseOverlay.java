@@ -52,7 +52,7 @@ public class ZulrahNextPhaseOverlay extends Overlay
 	}
 
 	@Override
-	public Dimension render(Graphics2D graphics, Point parent)
+	public Dimension render(Graphics2D graphics)
 	{
 		ZulrahInstance instance = plugin.getInstance();
 
@@ -72,7 +72,7 @@ public class ZulrahNextPhaseOverlay extends Overlay
 		ImagePanelComponent imagePanelComponent = new ImagePanelComponent();
 		imagePanelComponent.setTitle("Next");
 		imagePanelComponent.setBackgroundColor(backgroundColor);
-		imagePanelComponent.setImage(zulrahImage);
-		return imagePanelComponent.render(graphics, parent);
+		imagePanelComponent.getImages().add(zulrahImage);
+		return imagePanelComponent.render(graphics);
 	}
 }
